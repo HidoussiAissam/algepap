@@ -1,0 +1,6 @@
+﻿2
+al_fadjr_testurl="http://www.al-fadjr.com/ar/files.php?force&amp;file=edition"
+wget "http://www.al-fadjr.com/ar/" --output-document $tmpfolder
+al_fadjr_test=$(cat $tmpfolder | grep $al_fadjr_testurl)
+al_fadjr_test=$(echo $al_fadjr_test | grep -o 'http://[^"]*pdf')
+al_fadjr_downloadlink=$(echo ${al_fadjr_test:0:37})$(echo ${al_fadjr_test:47})

@@ -1,0 +1,6 @@
+1
+el_massa_testurl="http://www.el-massa.com/ar/pdf/"
+wget "http://www.el-massa.com/ar/" --output-document $tmpfolder
+el_massa_test=$(cat $tmpfolder | grep $el_massa_testurl)
+echo $el_massa_test | grep -o 'http://[^"]*pdf' > $tmpfolder
+read -r el_massa_downloadlink < $tmpfolder

@@ -1,0 +1,5 @@
+#!/bin/bash
+	if [ x"$KDE_FULL_SESSION" = x"true" ]; then DE=konsole;
+	elif [ x"$GNOME_DESKTOP_SESSION_ID" != x"" ]; then DE=gnome-terminal;fi;
+	echo $DE
+exit 0

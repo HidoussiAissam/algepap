@@ -1,0 +1,6 @@
+﻿2
+eladjwaa_testurl="http://www.eladjwaaonline.com/pdf/a"
+eladjwaa_testurll="http://www.eladjwaaonline.com/"
+wget $eladjwaa_testurll --output-document $tmpfolder
+eladjwaa_test=$(cat $tmpfolder | grep $eladjwaa_testurl)
+eladjwaa_downloadlink=$(echo $eladjwaa_test | grep -o 'http[^"]*pdf')

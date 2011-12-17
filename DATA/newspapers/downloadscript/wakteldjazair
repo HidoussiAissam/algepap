@@ -1,0 +1,7 @@
+﻿2
+wakteldjazair_testurl="telech_doc.php?id="
+wakteldjazair_testurll="http://www.wakteldjazair.com/"
+wget $wakteldjazair_testurll --output-document $tmpfolder
+wakteldjazair_test=$(cat $tmpfolder | grep $wakteldjazair_testurl)
+wakteldjazair_test=$(echo $wakteldjazair_test | grep -o 'telech_doc.php?id=[^"]*')
+wakteldjazair_downloadlink=$wakteldjazair_testurll$wakteldjazair_test

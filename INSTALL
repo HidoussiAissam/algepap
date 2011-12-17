@@ -1,0 +1,28 @@
+English {
+	To compile the AlgePap, use one of this tow sequences of commands :
+
+	./configure	(to create Makefile and verify some variable)
+	make		(to compile application)
+	make install	(to install application)
+	make clean	(to clean object files)
+
+	I am using the following versions in creating differents sources files :
+		g++ : gcc version 4.4.5 (Debian 4.4.5-8)
+		qt4 : qt version 4.6.3
+	     use this versions or later.
+} End English
+
+Arabic {
+من أجل عمل كومبايل لبرنامج ألـجـيــپاپ، استعمل احد المجموعتين من الاوامر التالية :
+
+	./configure	(to create Makefile and verify some variable)
+	make		(to compile application)
+	make install	(to install application)
+	make clean	(to clean object files)
+
+استعملت هذه النسخ من البرامج في كتابة مختلف الكودات في البرنامج :
+		g++ : gcc version 4.4.5 (Debian 4.4.5-8)
+		qt4 : qt version 4.6.3
+	من اجل عمل كومبايل للبرنامج، استخدم هذه النسخ او اكبر.
+
+} End Arabic

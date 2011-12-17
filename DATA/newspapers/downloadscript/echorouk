@@ -1,0 +1,9 @@
+﻿2
+echorouk_testurl1="http://www.echoroukonline.com/ara/archives_pdf/archives_pdf_2011/mai-2011/index.1.html"
+echorouk_testurl2="http://www.echoroukonline.com/ara/files.php?force&amp;file="
+wget $echorouk_testurl1 --output-document $tmpfolder
+echorouk_test1=$(cat $tmpfolder | grep $echorouk_testurl2)
+echorouk_test1=$(echo $echorouk_test1 | grep -o 'http://[^"]*pdf')
+echo $echorouk_test1 | tr ' ' '\n' > $tmpfolder
+read -r echorouk_test1 < $tmpfolder
+echorouk_downloadlink=$(echo ${echorouk_test1:0:44})$(echo ${echorouk_test1:54})

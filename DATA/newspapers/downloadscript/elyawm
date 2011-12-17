@@ -1,0 +1,8 @@
+﻿2
+elyawm_testurl="images/stories/"
+elyawm_testurll="http://www.elyawm.com/"
+wget $elyawm_testurll --output-document $tmpfolder
+elyawm_test=$(cat $tmpfolder | grep $elyawm_testurl)
+echo $elyawm_test | grep -o '[^"]*pdf' > $tmpfolder
+read -r elyawm_test < $tmpfolder
+elyawm_downloadlink=$elyawm_testurll$elyawm_test

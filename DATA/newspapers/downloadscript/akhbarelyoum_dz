@@ -1,0 +1,9 @@
+﻿3
+akhbarelyoum_dz_testurl1="/pdf/dawn.php?ID="
+akhbarelyoum_dz_testurl2="http://akhbarelyoum-dz.com/"
+wget "http://www.akhbarelyoum-dz.com/ar/" --output-document $tmpfolder
+akhbarelyoum_dz_test1=$(cat $tmpfolder | grep $akhbarelyoum_dz_testurl1)
+akhbarelyoum_dz_test1=$(echo $akhbarelyoum_dz_test1 | grep -o 'pdf/dawn[^"]*')
+akhbarelyoum_dz_testurl2=$akhbarelyoum_dz_testurl2$akhbarelyoum_dz_test1
+wget $akhbarelyoum_dz_testurl2 --output-document $tmpfolder
+akhbarelyoum_dz_downloadlink=$(cat $tmpfolder | grep -o 'http[^"]*pdf')

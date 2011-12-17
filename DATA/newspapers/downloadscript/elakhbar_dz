@@ -1,0 +1,12 @@
+﻿2
+elakhbar_dz_testurl1="/ar/pdf/"
+elakhbar_dz_testurl2="/ar/pdf/2011/"
+elakhbar_dz_testurl3="http://www.elakhbar-dz.com/ar/"
+wget $elakhbar_dz_testurl3 --output-document $tmpfolder
+elakhbar_dz_test1=$(cat $tmpfolder | grep $elakhbar_dz_testurl1)
+echo $elakhbar_dz_test1 | grep -o 'pdf/[^"]*html' > $tmpfolder
+read -r elakhbar_dz_test1 < $tmpfolder
+wget "$elakhbar_dz_testurl3$elakhbar_dz_test1" --output-document $tmpfolder
+elakhbar_dz_test1=$(cat $tmpfolder | grep $elakhbar_dz_testurl2)
+elakhbar_dz_test1=$(echo $elakhbar_dz_test1 | grep -o 'pdf/[^"]*pdf')
+elakhbar_dz_downloadlink=$elakhbar_dz_testurl3$elakhbar_dz_test1

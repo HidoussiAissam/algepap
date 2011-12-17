@@ -1,0 +1,13 @@
+﻿3
+alseyassi_testurl="daw.php?ID="
+alseyassi_testurll="http://www.alseyassi.com/ara/"
+wget $alseyassi_testurll --output-document $tmpfolder
+alseyassi_test=$(cat $tmpfolder | grep $alseyassi_testurl)
+echo $alseyassi_test | grep -o '[^"]*ID=[0-9][0-9]' > $tmpfolder
+read -r alseyassi_test < $tmpfolder
+alseyassi_testt=$alseyassi_testurll$alseyassi_test
+alseyassi_testurlt="download/"
+wget $alseyassi_testt --output-document $tmpfolder
+alseyassi_test=$(cat $tmpfolder | grep $alseyassi_testurlt)
+alseyassi_test=$(echo $alseyassi_test | grep -o 'download[^"]*pdf')
+alseyassi_downloadlink=$alseyassi_testurll$alseyassi_test

@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ ! -z "$BROWSER" ]
+then
+  defaultbrowser="$BROWSER"
+else
+  defaultbrowser="$(which firefox || which opera || which arora)"
+fi
+echo $defaultbrowser
+exit 0

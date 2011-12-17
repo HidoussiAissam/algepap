@@ -1,0 +1,9 @@
+﻿3
+eloumma_testurl1="http://www.eloumma.com/ar/content/blogcategory/75/117/"
+eloumma_testurl2="PDF2011/"
+wget $eloumma_testurl1 --output-document $tmpfolder
+eloumma_test1=$(cat $tmpfolder | grep $eloumma_testurl2)
+eloumma_test1=$(echo $eloumma_test1 | grep -o 'PDF[^"]*pdf')
+echo $eloumma_test1 | tr ' ' '\n' > $tmpfolder
+read -r eloumma_test1 < $tmpfolder
+eloumma_downloadlink="http://www.eloumma.com/ar/"$eloumma_test1

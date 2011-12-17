@@ -1,0 +1,6 @@
+1
+ennahar_testurl="http://www.ennaharonline.com/ar/files.php?force&amp;file="
+wget "http://www.ennaharonline.com/ar/" --output-document $tmpfolder
+ennahar_test=$(cat $tmpfolder | grep $ennahar_testurl)
+ennahar_test=$(echo $ennahar_test | grep -o 'http://[^"]*pdf')
+ennahar_downloadlink=$(echo ${ennahar_test:0:42})$(echo ${ennahar_test:52})

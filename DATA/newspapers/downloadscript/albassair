@@ -1,0 +1,5 @@
+1
+albassair_testurl="http://www.albassair.org/journal/"
+wget "http://www1.albassair.org/index.php" --output-document $tmpfolder
+albassair_test=$(cat $tmpfolder | grep $albassair_testurl)
+albassair_downloadlink=$(echo $albassair_test | grep -o 'http://[^"]*rar')

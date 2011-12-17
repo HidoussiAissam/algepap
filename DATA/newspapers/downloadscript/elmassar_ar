@@ -1,0 +1,7 @@
+﻿2
+elmassar_ar_testurl="pdf/"
+elmassar_ar_testurll="http://elmassar-ar.com/ara/"
+wget $elmassar_ar_testurll --output-document $tmpfolder
+elmassar_ar_test=$(cat $tmpfolder | grep $elmassar_ar_testurl)
+elmassar_ar_test=$(echo $elmassar_ar_test | grep -o '[^"]*pdf')
+elmassar_ar_downloadlink=$elmassar_ar_testurll$elmassar_ar_test

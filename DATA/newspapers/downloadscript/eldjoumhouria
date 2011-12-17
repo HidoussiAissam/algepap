@@ -1,0 +1,7 @@
+﻿2
+eldjoumhouria_testurl="pdf/"
+eldjoumhouria_testurll="http://www.eldjoumhouria.dz/"
+wget $eldjoumhouria_testurll --output-document $tmpfolder
+eldjoumhouria_test=$(cat $tmpfolder | grep $eldjoumhouria_testurl)
+eldjoumhouria_test=$(echo $eldjoumhouria_test | grep -o 'pdf/[^"]*pdf')
+eldjoumhouria_downloadlink=$eldjoumhouria_testurll$eldjoumhouria_test

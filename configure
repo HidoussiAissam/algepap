@@ -1,0 +1,42 @@
+#!/bin/bash
+
+#Getting some variables
+version="4.6.3"
+nversion=$(qmake-qt4 -v | grep -m1 -o -P "[0-9]\.[0-9]\.[0-9]")
+
+#Checking existence of qmake-qt4
+echo -n "checking qmake-qt4 ... "
+if which qmake-qt4 >/dev/null 2>&1; then
+	echo "yes"
+else
+	echo "no"
+	echo "Qt (Version >= $version) is needed..."
+	echo "exit..."
+	exit 1
+fi
+
+#Checking version of qt
+echo "checking qt version ... $nversion"
+if [ $nversion != $version ]; then
+	if [ $nversion < $version ]; then
+		echo "Qt (Version >= $version) is needed..."
+		echo "exit..."
+		exit 1
+	fi;
+fi
+
+#Generating Makefile
+echo -n "generating Makefile ... "
+qmake-qt4 -nocache -unix QMAKE_CFLAGS_RELEASE=-g\ -O2 QMAKE_CFLAGS_DEBUG=-g\ -O2 QMAKE_CXXFLAGS_RELEASE=-g\ -O2 QMAKE_CXXFLAGS_DEBUG=-g\ -O2 QMAKE_STRIP=: -o Makefile algepap-1.0.pro
+echo "success"
+
+#Sample outup indicate success of script, and how to install the application
+echo "***********************************************************************"
+echo "configuration is terminated with success"
+echo "***********************************************************************"
+echo "to compile and install the application use this commands :"
+echo "	make"
+echo "	sudo make install (or su make install)"
+echo "	make clean"
+echo "***********************************************************************"
+exit 0

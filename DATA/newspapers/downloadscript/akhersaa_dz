@@ -1,0 +1,9 @@
+﻿2
+akhersaa_dz_testurl1="http://www.akhersaa-dz.com/"
+akhersaa_dz_testurl2="http://www.akhersaa-dz.com/files.php?force&amp;file=journal"
+wget $akhersaa_dz_testurl1 --output-document $tmpfolder
+akhersaa_dz_test1=$(cat $tmpfolder | grep $akhersaa_dz_testurl2);
+akhersaa_dz_test1=$(echo $akhersaa_dz_test1 | grep -o 'http://[^"]*pdf')
+echo $akhersaa_dz_test1 | tr ' ' '\n' > $tmpfolder
+read -r akhersaa_dz_test1 < $tmpfolder
+akhersaa_dz_downloadlink=$(echo ${akhersaa_dz_test1:0:37})$(echo ${akhersaa_dz_test1:47})
