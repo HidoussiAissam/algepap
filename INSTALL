@@ -1,10 +1,10 @@
 English {
 	To compile AlgePap application, use this commands commands :
 
-	./configure	(to create Makefile and verify some variable)
-	make		(to compile application)
-	make install	(to install application)
-	make clean	(to clean object files)
+	./configure		(to create Makefile and verify some variable)
+	make			(to compile application)
+	sudo make install	(to install application)
+	make clean		(to clean object files)
 
 	I am using the following versions in creating different sources files :
 		g++ : gcc version 4.4.5 (Debian 4.4.5-8)
@@ -15,10 +15,10 @@ English {
 Arabic {
 من أجل ترجمة برنامج ألـجـيــپاپ، استعمل الاوامر التالية :
 
-	./configure	(to create Makefile and verify some variable)
-	make		(to compile application)
-	make install	(to install application)
-	make clean	(to clean object files)
+	./configure		(to create Makefile and verify some variable)
+	make			(to compile application)
+	sudo make install	(to install application)
+	make clean		(to clean object files)
 
 استعملت هذه النسخ من البرامج في كتابة مختلف الأكواد في البرنامج :
 		g++ : gcc version 4.4.5 (Debian 4.4.5-8)
