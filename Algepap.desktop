@@ -6,5 +6,5 @@ Type=Application
 Terminal=false
 Exec=algepap
 Name=Algepap
-Categories=Network;GNOME;QT;
+Categories=Network;GNOME;KDE;QT;
 Icon=/usr/share/icons/hicolor/64x64/apps/icon64.png
