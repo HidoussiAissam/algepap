@@ -37,7 +37,7 @@ unix {
   data.files += ../DATA ../COPYING
 
   desktop.path =$$DATADIR/applications
-  desktop.files += ../Algepap.desktop
+  desktop.files += Algepap.desktop
 
   icon64.path = $$DATADIR/icons/hicolor/64x64/apps
   icon64.files += ../DATA/icons/icon64.png
